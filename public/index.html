@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MENX — Menswear</title>
+  <meta name="description" content="MENX: modern menswear. Tees, shirts, jeans, hoodies and jackets.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="marquee">Free shipping above ₹1,999 · Cash on delivery available</div>
+  <header>
+    <div class="wrap">
+      <a class="logo" href="#/">MEN<span>X</span></a>
+      <nav id="nav"></nav>
+    </div>
+  </header>
+  <main id="app"></main>
+  <footer>
+    <div class="wrap">© <span id="year"></span> MENX. All rights reserved.</div>
+  </footer>
+  <button class="assistant-launcher" type="button" data-action="assistant-open" aria-label="Open the MENX style assistant">
+    <span class="assistant-launcher-icon" aria-hidden="true">✳</span>
+    <span>Style assistant</span>
+  </button>
+  <section class="assistant-panel" id="assistant-panel" aria-label="MENX style assistant" hidden>
+    <header class="assistant-header">
+      <div>
+        <strong>MENX STYLE ASSISTANT</strong>
+        <span id="assistant-status" role="status">Ask about outfits, fit, or the collection.</span>
+      </div>
+      <button type="button" data-action="assistant-close" aria-label="Close assistant">×</button>
+    </header>
+    <div class="assistant-messages" id="assistant-messages" aria-live="polite" aria-relevant="additions">
+      <div class="assistant-message assistant-reply">Hey! Tell me what you're shopping for, your budget, or the look you're after. I'll find the right pieces.</div>
+    </div>
+    <div class="assistant-prompts" id="assistant-prompts">
+      <button type="button">Build me an outfit under ₹2,500</button>
+      <button type="button">What should I wear for a weekend?</button>
+    </div>
+    <form class="assistant-form" id="assistant-form">
+      <label class="sr-only" for="assistant-input">Ask the style assistant</label>
+      <input id="assistant-input" name="message" placeholder="Ask about outfits, fit, or budget…" maxlength="800" autocomplete="off" required>
+      <button class="btn" type="submit" aria-label="Send message">↑</button>
+    </form>
+    <p class="assistant-disclaimer">AI recommendations use the live catalog. Check product details before ordering.</p>
+  </section>
+  <dialog class="quick-view" id="quick-view" aria-label="Quick view">
+    <button class="quick-view-close" type="button" data-action="close-quick-view" aria-label="Close quick view">×</button>
+    <div id="quick-view-content"></div>
+  </dialog>
+  <script src="/app.js?v=gemini-stream-1"></script>
+</body>
+</html>
